@@ -31,13 +31,31 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+        it('have in each feed a defined URL', function() {
+            for (let i in allFeeds) {
+                expect(allFeeds[i].url).toBeDefined();
+                expect(typeof allFeeds[i].url).toBe('string');
+                expect(allFeeds[i].url).not.toBe('');
+             };
+         });
+        });
 
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+        it('have in each feed a defined name', function() {
+            for (let j in allFeeds) {
+                expect(allFeeds[j].name).toBeDefined();
+                expect(typeof allFeeds[j].name).toBe('string');
+                expect(allFeeds[j].name).not.toBe('');
+             };
+         });
     });
+
+
+   
 
 
     /* TODO: Write a new test suite named "The menu" */
@@ -48,11 +66,22 @@ $(function() {
          * hiding/showing of the menu element.
          */
 
+        describe('The menu', function() {
+            
+            it('is hidden by default', function() {
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+            
+        });
+
+
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+
+
+          
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
