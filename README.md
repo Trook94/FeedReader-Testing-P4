@@ -1,3 +1,10 @@
-# Project Overview
+# Description
+Project created as part of the Udacity Front-End Developer Nanodegree.
+In this project I've been given a web-based application that reads RSS feeds. They've already included [Jasmine](http://jasmine.github.io/).
 
-In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
+# Run the Application
+In order to run the application you can:
+* Download as .zip file
+* Clone or fork this project:
+
+After that, open the `index.html` and check the test results.
