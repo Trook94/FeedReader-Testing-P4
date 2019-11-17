@@ -38,7 +38,7 @@ $(function() {
                 expect(allFeeds[i].url).not.toBe('');
              };
          });
-        });
+      
 
 
         /* TODO: Write a test that loops through each feed
@@ -69,9 +69,8 @@ $(function() {
         describe('The menu', function() {
             
             it('is hidden by default', function() {
-            expect($('body').hasClass('menu-hidden')).toBe(true);
-            
-        });
+                expect($('body').hasClass('menu-hidden')).toBe(true);
+            });
 
 
          /* TODO: Write a test that ensures the menu changes
@@ -80,10 +79,21 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
 
+         it('changes visibility when is clicked', function() {
+            let menuIcon = $('.menu-icon-link');
+            menuIcon.click();
+            expect($('body').hasClass('menu-hidden')).toBe(false);
+            menuIcon.click();
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
+    });
 
-          
+
+
 
     /* TODO: Write a new test suite named "Initial Entries" */
+    describe('Initial Entries', function() {
+
 
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -91,11 +101,45 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+        loadFeed(0, function() {
+            loudFeed(0, function () {
+            done();
+        });
+    });
+
+    it('has at least 1 entry', function(done) {
+        expect($('.feed .entry').length).toBeGreaterThan(0);
+        done();
+     });
+    });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
+    describe('New Feed Selection', function() {
 
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+
+        let prevFeedData,
+        newFeedData;
+
+    beforeEach(function(done) {
+        loadFeed(0, function() {
+            // Load and store previous Feed data
+            prevFeedData = $('.feed').html();
+
+            loadFeed(1, function(){
+                // Load and store new Feed data
+                newFeedData= $('.feed').html();
+                // Start tests
+                done();
+            });
+        });
+    });
+
+    it('has a different content than previous one', function() {
+        expect(prevFeedData).not.toBe(newFeedData);
+    });
+});
+
+
+
+
 }());
