@@ -101,43 +101,43 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-        loadFeed(0, function() {
-            loudFeed(0, function () {
-            done();
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                 done();
+            });
         });
-    });
 
-    it('has at least 1 entry', function(done) {
-        expect($('.feed .entry').length).toBeGreaterThan(0);
-        done();
-     });
+        it('has at least 1 entry', function(done) {
+            expect($('.feed .entry').length).toBeGreaterThan(0);
+            done();
+             });
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
 
 
-        let prevFeedData,
-        newFeedData;
+             let prevFeedData,
+                newFeedData;
 
-    beforeEach(function(done) {
-        loadFeed(0, function() {
-            // Load and store previous Feed data
-            prevFeedData = $('.feed').html();
+             beforeEach(function(done) {
+                loadFeed(0, function() {
+                     // Load and store previous Feed data
+                     prevFeedData = $('.feed').html();
 
-            loadFeed(1, function(){
-                // Load and store new Feed data
-                newFeedData= $('.feed').html();
-                // Start tests
-                done();
-            });
-        });
+                    loadFeed(1, function(){
+                    // Load and store new Feed data
+                    newFeedData= $('.feed').html();
+                    // Start tests
+                     done();
+                 });
+             });
+         });
+
+         it('has a different content than previous one', function() {
+             expect(prevFeedData).not.toBe(newFeedData);
+         });
     });
-
-    it('has a different content than previous one', function() {
-        expect(prevFeedData).not.toBe(newFeedData);
-    });
-});
 
 
 
