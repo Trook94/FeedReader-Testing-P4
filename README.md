@@ -3,6 +3,10 @@ Project created as part of the Udacity Front-End Developer Nanodegree.
 In this project I've been given a web-based application that reads RSS feeds. They've already included [Jasmine](http://jasmine.github.io/).
 
 
+https://trook94.github.io/FeedReader-Testing-P4/.
+
+
+
 1. Edit the `allFeeds` variable in `app.js` to make the provided test fail
 
 2. Write a test that loops through each feed in the `allFeeds` object and ensures it has a URL defined _and_ that the URL is not empty
