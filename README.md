@@ -3,6 +3,8 @@ Project created as part of the Udacity Front-End Developer Nanodegree.
 In this project I've been given a web-based application that reads RSS feeds. They've already included [Jasmine](http://jasmine.github.io/).
 
 
+
+
 1. Edit the `allFeeds` variable in `app.js` to make the provided test fail
 
 2. Write a test that loops through each feed in the `allFeeds` object and ensures it has a URL defined _and_ that the URL is not empty
@@ -28,6 +30,9 @@ In this project I've been given a web-based application that reads RSS feeds. Th
 <img src="img\jasmine.JPG">
 
 # Run the Application
+
+https://trook94.github.io/FeedReader-Testing-P4/.
+
 In order to run the application you can:
 * Download as .zip file
 * Clone or fork this project:
